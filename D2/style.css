@@ -1,0 +1,85 @@
+body {
+    text-align: left;
+    margin: auto;
+    color: #333;
+    font-family: Georgia, serif;
+}
+
+nav
+{
+    text-align: center;
+    background-color: #fefbf1;
+    height: 25px;
+    padding: 10px;
+    border-top:1px solid yellow;
+    font-size: 16px;
+}   
+
+#focacciaImg 
+{
+    border-radius: 20px;
+}
+
+#logo 
+{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+#inizio 
+{
+    background-color: #fefbf1;
+    text-align: center;
+    height: 25px;
+    padding: 10px;
+    color:#004d4d;
+    font-size: 12pt;
+    border-top:1px solid yellow ;
+}
+
+#contentArea 
+{
+    width: 50%;
+    margin: auto;
+}
+
+#titolo 
+{
+    text-align: center;
+    font-weight: bold;
+    text-align: center;
+}
+
+#wow
+{
+    margin-top: 2em;
+    margin-bottom: 2em; 
+    width: 100%;
+    border-radius: 10px;
+}
+
+#feature
+{ 
+   padding-left: 10px;
+    border-left: 2px solid yellow;
+}
+
+#focaccia 
+{
+    text-align: center;
+    box-shadow: 10px 5px 5px rgb(207, 233, 114)
+}
+
+.sectionTitle
+{
+    margin-top: 50px;
+   border-bottom: 1px solid #90b7e9;
+}
+
+#imgauthor
+{   
+     color: rgb(192, 207, 221);
+    text-align: center;
+}

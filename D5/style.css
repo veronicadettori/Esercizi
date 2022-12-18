@@ -1,0 +1,79 @@
+body
+{
+    margin: 50px;
+    padding-left: 50px;
+}
+
+h1 
+{
+    color: rgb(58, 10, 10);
+    font-size: large;
+    padding-left: 100px;
+}
+
+.container 
+{
+    margin-left: 4rem;
+    margin-top: 4rem;
+}
+.container  
+{
+    width: 560px;
+    height: 560px;
+    border: 1px solid black;
+}
+.black 
+{
+    
+    width: 70px;
+    height: 70px;
+    background-color: black;
+}
+.white 
+{
+    width: 70px;
+    height: 70px;
+    background-color: #B09068;
+}
+.row 
+{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap; 
+   justify-content: center;
+   position: relative;
+
+}
+
+.row:first-child span:nth-child(1) 
+{
+    position: absolute;
+    bottom: 80px;
+    color:black;
+    
+}
+
+.row:last-child span:nth-child(1) 
+{
+    position: absolute;
+    top: 80px;
+    color:black;
+}
+
+.sx 
+{
+    position: absolute;
+    right: 580px;
+}
+
+.dx
+{
+    position: absolute;
+    left: 580px;
+}
+
+div:hover
+{
+    background-color: red;
+    cursor: pointer;
+}

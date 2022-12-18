@@ -1,0 +1,180 @@
+body
+{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar
+{
+    background-color: #222F3E;
+}
+
+#imglogo
+{
+    width: 150px;
+}
+
+#navbelt
+{
+    background-color: #354758;
+    color: whitesmoke;
+
+}
+
+.nvbelt
+{
+    margin: 8px;
+    color: white;
+    padding: 3px;
+    text-decoration: none;
+}
+
+.content
+{
+    background-color: #EAEDED;
+}
+
+.orangebelt
+{
+    background-color: orange;
+    text-align: center;
+    margin: 20px;
+}  
+
+#orange
+{
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+}
+
+#verde
+{
+    text-align: center;
+    background-image: url(./bg-image.png);
+    height: 185px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#holidays-gift
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+#gifter
+{
+    color: white;
+    font-weight: lighter;
+}
+
+.quattro
+{
+    background-color: white;
+    margin: 20px
+}
+
+#fleximg
+{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.img-round-border 
+{
+    border-radius: 12px;
+}
+
+#gift
+{
+    text-align: left;
+    padding: 15px;
+}
+
+.blocchi 
+{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.titlesez
+{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.imgsez 
+{
+    width: 100px;
+}
+
+.sezionipadre
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sez 
+{
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    width: 350px;
+}
+
+.wrapImageDiv {
+    margin: 10px
+}
+
+
+#linkblo
+{
+    text-decoration: none;
+}
+
+.blocco1
+{
+    text-align: center;
+    margin: 20px;
+}
+
+.blocco2
+{
+    text-align: center;
+    margin: 20px;
+}
+
+#footer
+{
+    margin: 0;
+    width: 100%;
+}
+
+#bottom
+{
+    background-color: #354758;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+#backtop
+{
+    margin: auto;
+    padding: 5px;
+    color: white;
+    font-size: medium;
+}
+
+#bottombar
+{
+    background-color: #222F3E;
+    text-align: center;
+}
