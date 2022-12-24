@@ -1,0 +1,143 @@
+body
+{
+    width: 40%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+}
+
+img
+{
+    border-radius: 50px;
+    transition: 1s;
+    opacity: 1;
+    transition: .5s ease;
+    cursor: zoom-in;
+}
+
+.button
+{
+    position:absolute;
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /*questa parte riguarda gli extra*/
+    transition: width 0.5s;
+}
+
+ /*questa parte riguarda gli extra*/
+.container:hover .button
+{
+    bottom: 900px;
+}
+
+.icon1
+{
+    position: absolute;
+    font-size: 80px;
+    bottom: 50px;
+    left: 20px;
+    cursor: pointer;
+    color: rgb(33, 5, 59);
+}
+
+.icon2
+{
+    position: absolute;
+    color: rgb(33, 5, 59);
+    font-size: 80px;
+    bottom: 40px;
+    left: 100px;
+    cursor: pointer;
+}
+
+.save
+{
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background-color: rgb(93, 128, 156);
+    border: 1px solid;
+    border-radius: 80px;
+    margin:auto;
+    width: 150px;
+    height: 50px;
+    bottom: 900px;
+    left: 590px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /*questa parte riguarda gli extra*/
+    transition: width 0.5s;
+}
+
+ /*questa parte riguarda gli extra*/
+.container:hover .save
+{
+    top: 850px 
+}
+
+a
+{
+    text-decoration: none;
+    color: #2E4C89;
+    border: 1px solid white ;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.site
+{
+    position: absolute;
+    left: 600px;
+    bottom: 65px;
+    width: 200px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+span
+{
+    font-size: 30px;
+}
+
+img:hover
+{
+    opacity: 0.5;
+    cursor: zoom-in;
+}
+
+.container:hover .image 
+{
+  opacity: 0.3;
+}
+
+.container:hover .button
+{
+  opacity: 1;
+}
+
+#Salva
+{
+    position: absolute;
+    bottom: 895px;
+    left: 515px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(93, 128, 156);
+    text-align: center;
+    margin:auto;
+    width: 150px;
+    height: 30px;
+}
