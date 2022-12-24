@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.nav span {
+    padding-left: 40px;
+}
+
+#red {
+    color: red;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+#border {
+    border: 2px solid pink;
+    padding: 10px;
+    border-radius: 10%;
+    font-weight: bold;
+}
+
+#border2 {
+    border: 1px solid rgb(235, 233, 233);
+    padding: 10px;
+    border-radius: 10%;
+    font-weight: bold;
+}
+
+#border3 {
+    border: 1px solid rgb(235, 233, 233);
+    background-color: rgb(235, 233, 233);
+    padding: 10px;
+    border-radius: 10%;
+    font-weight: bold;
+}
+
+.filter1 {
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.filter2 {
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card img {
+    width: 270px;
+    border-radius: 10px;
+}
+
+.cardinfo img {
+    width: 20px;
+    display: flex;
+}
+
+.id {
+    border-radius: 50%;
+}
+
+#tag {
+    color: white;
+    background-color: rgb(165, 163, 163);;
+    border-radius: 10%;
+    padding: 3px;
+    font-size: 8pt;
+}
+
+#boost {
+    color: grey;
+}
+
+.cardinfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+}
+
+.card {
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
