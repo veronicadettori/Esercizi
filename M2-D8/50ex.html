@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <!--
+        ESERCIZI HTML
+
+        1) Assegna un titolo per questa pagina
+        2) Crea un tag h1 con il contenuto che preferisci
+        3) Crea una lista ordinata con alcuni elementi al suo interno
+        4) Crea una tabella con 4 righe e 5 colonne
+        5) Aggiungi un'immagine a ogni seconda cella di ogni riga
+        6) Aggiungi un tag <a> ad ogni immagine
+        7) Unisci insieme 2 celle della tabella
+        8) Dividi la pagina inserendo una riga orizzontale
+        9) Crea un elemento contenitore con al suo interno un paragrafo e una lista non ordinata
+        10) Crea un footer contenente alcune informazioni sul creatore della pagina
+
+        ESERCIZI CSS
+
+        11) Assegna una larghezza massima al tag body e centralo nella pagina
+        12) Centra ogni tag h1
+        13) Cambia il colore di ogni link nella pagina
+        14) Crea una classe e assegnale un bordo
+        15) Fai in modo che la i bordi della tabella che hai creato siano arrotondati
+        16) Aggiungi un margine ad ogni paragrafo
+        17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font
+        18) Crea una classe per nascondere un elemento
+        19) Aggiungi un bordo verde a ogni <td>
+        20) Aggiungi un bordo puntato rosso a ogni <tr> (nota: <tr> non accetta una proprietà "border")
+
+        ESERCIZI JAVASCRIPT
+
+        21) Date le variabili x = "John" e y = "Doe", mostra in console "John <> Doe"
+        22) Crea un oggetto con le seguenti proprietà: name, surname, email
+        23) Cancella la proprietà email dall'oggetto appena creato
+        24) Crea un array contenente 10 stringhe
+        25) Mostra in console ogni stringa del precedente array
+        26) Crea un array contenente 100 numeri random
+        27) Scrivi una funzione per trovare il valore massimo e il valore minimo dall'array appena creato
+        28) Crea un array di array, nel quale ogni array "figlio" ha 10 numeri random
+        29) Crea una funzione che riceve 2 array come parametri e ritorni quello con più elementi
+        30) Crea una funzione che riceve 2 array numerici come parametri e ritorna quello con la somma totale degli elementi maggiore
+
+        ESERCIZI SUL DOM
+
+        31) Seleziona l'elemento con id "container" nella pagina
+        32) Seleziona tutti gli elementi di tipo <td> nella pagina
+        33) Usa un ciclo per stampare in console il testo contenuto in ogni elemento <td> nella pagina
+        34) Scrivi una funzione per cambiare il titolo della pagina
+        35) Scrivi una funzione per aggiungere una nuova riga alla tabella nella pagina
+        36) Scrivi una funzione per aggiungere la classe "test" ad ogni riga nella tabella
+        37) Scrivi una funzione per aggiungere uno sfondo rosso a ogni link presente nella pagina
+        38) Mostra in console "Page loaded" quando la pagina ha finito di caricarsi
+        39) Scrivi una funzione per aggiungere nuovi elementi alla lista non ordinata nella pagina
+        40) Scrivi una funzione per svuotare una lista nella pagina
+
+        ESERCIZI EXTRA
+
+        41) Aggiungi un event listener in modo che compaia un alert quando il cursore passa sopra un link; l'alert deve mostrare la sua proprietà href
+        42) Crea un bottone che una volta cliccato nasconde ogni immagine nella pagina
+        43) Crea un bottone che una volta cliccato nasconde o mostra la tabella nella pagina
+        44) Crea una funzione per calcolare la somma di ogni numero contenuto in tutte le celle della tabella (se il contenuto è un numero)
+        45) Cancella l'ultima lettera dal titolo della pagina ogni volta che l'utente ci clicca sopra
+        46) Aggiungi un event listener in modo che cliccando un <td> nella pagina, questo cambi colore di sfondo
+        47) Aggiungi un bottone che una volta cliccato elimini un <td> a caso nella tabella
+        48) Aggiungi automaticamente un bordo rosa ad una cella della tabella quando il cursore ci passa sopra
+        49) Scrivi una funzione per creare una tabella con 4 righe e 3 colonne e aggiungerla alla fine della pagina
+        50) Scrivi una funzione per rimuovere l'ultima tabella presente nella pagina
+        
+    --><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <title>D8</title>
+
+    <style>
+      img {
+        width: 90px;
+      }
+
+      body {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      a {
+        color:violet;
+      }
+
+      .classeCreata {
+        border: 1px solid violet;
+      }
+
+      table {
+        border: 1px solid purple;
+        border-radius: 10px;
+      }
+
+      p {
+        margin: 30px;
+      }
+
+      .classeFont {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+      }
+
+      .classePerNascondereElemento {
+        visibility: hidden;
+      }
+
+      td {
+        border: 1px solid green;
+        border-radius: 20px;
+
+      }
+    </style>
+  </head>
+  <body cz-shortcut-listen="true">
+    <h1>Pagina che preferisci</h1>
+    <li> Lista ordinata:
+      <ol> Primo elemento</ol>
+      <ol> Secondo elemento</ol>
+      <ol> Terzo elemento</ol>
+    </li>
+
+    <table>
+      <tr>
+        <td>1</td>
+        <td><img src="piatti.jpg" /><a href="https://www.google.com">Cerca</a></td>
+        <td colspan="2"> Due celle unite</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><img src="piatti.jpg" /><a href="https://www.google.com">Cerca</a></td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><img src="piatti.jpg" /><a href="https://www.google.com">Cerca</a></td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><img src="piatti.jpg" /><a href="https://www.google.com">Cerca</a></td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      
+    </table>
+
+    <hr>
+
+    <div id="container">
+      <p>Questo è un P</p>
+      <li> Lista non ordinata:
+        <ul>Elemento uno</ul>
+        <ul>Elemento due</ul>
+        <ul>Elemento tre</ul>
+      </li>
+    </div>
+
+
+    <script>
+
+      //JS
+      let x = "John";
+      let y = "Doe";
+      console.log(x + " <> " + y)
+
+      let oggetto = {
+        name: "John",
+        surname: "Doe",
+        email: "jojo@gmail.com"
+      };
+      delete oggetto.email;
+
+      let arrayDieci = ["s","t","r","i","g","d","i","e","c","i"]
+      for (i = 0; i < arrayDieci.length; i++){
+        console.log(arrayDieci[i])
+      }
+
+      let arrayNumeri = [];
+      for (i = 0; i < 100; i++) {
+        arrayNumeri.push(Math.floor(Math.random() * 100));
+      }
+      let max = Math.max(...arrayNumeri);
+      let min = Math.min(...arrayNumeri);
+
+      let arrayPapa = [[],[],[],[]]
+      for (i = 0; i < arrayPapa.length; i++){
+        for (let j = 0; j < 10; j++){
+          arrayPapa[i].push(Math.floor(Math.random() *10))
+        }
+      }
+
+      function dueArray (array,arrayDue){
+        if (array.length > arrayDue.length){
+          return array;
+        } else {
+          return arrayDue;
+        }
+      }
+
+      function numeriArray(arr,arr2) {
+        let sum1 = 0;
+        let sum2 = 0; 
+        for (i=0; i < arr.length; i++){
+          sum1 += arr[i];
+        }
+      }
+
+
+      //DOM
+      document.getElementById("container")
+
+      document.getElementsByTagName("td");
+
+      let tdElements = document.getElementsByTagName("td");
+      for (let i = 0; i < tdElements.length; i++) {
+        console.log(tdElements[i].textContent);
+      }
+
+      function changeTitle(newTitle) {
+        document.title = newTitle;
+      }
+
+      function addTableRow() {
+        let table = document.getElementsByTagName("table")[0];
+        let newRow = table.insertRow(-1);
+        let newCell1 = newRow.insertCell(0);
+        let newCell2 = newRow.insertCell(1);
+        newCell1.innerHTML = "New Cell 1";
+        newCell2.innerHTML = "New Cell 2";
+      }
+
+      function addClassToRows() {
+      let rows = document.getElementsByTagName("tr");
+        for (let i = 0; i < rows.length; i++) {
+          rows[i].classList.add("test");
+        }
+      }
+
+      function addRedBackgroundToLinks() {
+      let links = document.getElementsByTagName("a");
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.backgroundColor = "red";
+      }
+      }
+
+      window.addEventListener("load", function() {
+        console.log("Page loaded");
+      });
+
+      function addListItem() {
+      let list = document.getElementsByTagName("ul")[0];
+      let newItem = document.createElement("li");
+      newItem.innerHTML = "New List Item";
+      list.appendChild(newItem);
+    }
+
+    function clearList() {
+      let list = document.getElementsByTagName("ul")[0];
+      while (list.firstChild) {
+        list.removeChild(list.firstChild);
+      }
+    }
+
+
+    //EXTRA
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("mouseover", () => {
+        alert(link.href);
+      });
+    });
+
+    const hideImagesBtn = document.createElement("button");
+    hideImagesBtn.innerHTML = "Hide Images";
+    document.body.appendChild(hideImagesBtn);
+
+    hideImagesBtn.addEventListener("click", () => {
+      const images = document.querySelectorAll("img");
+      images.forEach(img => {
+        img.style.display = "none";
+      });
+    });
+
+
+    const toggleTableBtn = document.createElement("button");
+    toggleTableBtn.innerHTML = "Toggle Table";
+    document.body.appendChild(toggleTableBtn);
+
+    toggleTableBtn.addEventListener("click", () => {
+      const table = document.querySelector("table");
+      if (table.style.display === "none") {
+        table.style.display = "table";
+      } else {
+        table.style.display = "none";
+      }
+    });
+
+    function sumTableCells() {
+      let sum = 0;
+      const cells = document.querySelectorAll("td");
+      cells.forEach(cell => {
+        const cellValue = parseInt(cell.innerHTML);
+        if (!isNaN(cellValue)) {
+          sum += cellValue;
+        }
+      });
+      console.log("Sum of all cells:", sum);
+    }
+
+    const title = document.querySelector("title");
+    title.addEventListener("click", () => {
+      title.innerHTML = title.innerHTML.slice(0, -1);
+    });
+
+    const cells = document.querySelectorAll("td");
+    cells.forEach(cell => {
+      cell.addEventListener("click", () => {
+        cell.style.backgroundColor = "yellow";
+      });
+    });
+
+    const removeTdBtn = document.createElement("button");
+    removeTdBtn.innerHTML = "Remove Random TD";
+    document.body.appendChild(removeTdBtn);
+
+    removeTdBtn.addEventListener("click", () => {
+      const cells = document.querySelectorAll("td");
+      const randomIndex = Math.floor(Math.random() * cells.length);
+      cells[randomIndex].remove();
+    });
+
+    const cells = document.querySelectorAll("td");
+    cells.forEach(cell => {
+      cell.addEventListener("mouseover", () => {
+        cell.style.border = "2px solid pink";
+      });
+      cell.addEventListener("mouseout", () => {
+        cell.style.border = "";
+      });
+    });
+
+    function createTable() {
+    let table = document.createElement("table");
+    for (let i = 0; i < 4; i++) {
+      let row = document.createElement("tr");
+      for (let j = 0; j < 3; j++) {
+        let cell = document.createElement("td");
+        cell.innerHTML = "Cell " + (i + 1) + "," + (j + 1);
+        row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+      document.body.appendChild(table);
+    }
+
+
+    function removeLastTable() {
+      let tables = document.getElementsByTagName("table");
+      if (tables.length > 0) {
+        let lastTable = tables[tables.length - 1];
+        lastTable.parentNode.removeChild(lastTable);
+      }
+    }
+
+
+    </script>
+  </body>
+    <footer>
+      <p>Contattami per avere altre info </p>
+    </footer>
+</html>
