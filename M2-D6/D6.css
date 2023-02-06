@@ -1,0 +1,17 @@
+table td {
+    padding-right: 7%;
+    padding-bottom: 3%;
+}
+
+.imgm {
+    visibility: visible;
+    border: 10px solid rgb(138, 80, 165);
+}
+
+.hiddenClass {
+    visibility: hidden;
+}
+
+.clickable {
+    cursor: pointer;
+}

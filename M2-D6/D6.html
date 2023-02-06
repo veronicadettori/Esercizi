@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="D6.css">
+    <title>LILAC</title>
+</head>
+
+<body>
+    <h1 id="h1">Lilac</h1>
+
+    <table id="tableId">
+        <caption>LILAC best seller:</caption>
+        <tr>
+          <th>IPHONE 14</th>
+          <th>XIAOMI Redmi A1</th>
+          <th>Samsung Galaxy A04s</th>
+        </tr>
+        <tr>
+            <th><img class="imgm" src="iphone14.jpeg" width="100px"/></th>
+            <th><img class="imgm" src="samsung.jpeg" width="100px"/></th>
+            <th><img class="imgm" src="xiaomi.jpg" width="100px"/></th>
+            <th><button onclick="addCss()">Rimuoviamo la classe all'img</button></th>
+        </tr>
+        <tr>
+            <td><a href="www.amazon.com">Amazon</a></td>
+            <td><a href="www.amazon.com">Amazon</a></td>
+            <td><a href="www.amazon.com">Amazon</a></td>
+        </tr>
+        <tr>
+          <td>128 GB</td>
+          <td>32 GB</td>
+          <td>32GB</td>
+        </tr>
+        <tr>
+          <td>Mezzanotte</td>
+          <td>BLACK</td>
+          <td>BLACK</td>
+        </tr>
+        <tr>
+          <td>6.1 pollici</td>
+          <td>Display 6.52 pollici</td>
+          <td>Display da 6.5”<td>
+        </tr>
+        <tr>
+            <td class="clickable" id="iphone" onclick="colorChange('iphone')">$1.200</td>
+            <td class="clickable" id="xiaomi" onclick="colorChange('xiaomi')">$400</td>
+            <td class="clickable" id="samsung" onclick="colorChange('samsung')">$250<td>
+        </tr>
+        <tr>
+            <td><form action="/action_page.php">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br></form> 
+            </td>
+            <td><form action="/action_page.php">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br></form> </td>
+            <td><form action="/action_page.php">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br></form> <td>
+        </tr>
+      </table>
+
+<script src="D6.js"></script> 
+</body>
+<footer>
+    <p>Contattaci! </p>
+</footer>
+</html>
