@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox project</title>
+
+<style>
+    .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 350px;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+
+}
+
+.product-card__image {
+    height: 70%;
+    width: 100%;
+    border-top-right-radius: 80px;
+    border-top-left-radius: 100px;
+    object-fit: cover;
+
+}
+
+.product-card__info {
+    height: 30%;
+    width: 100%;
+    background-color: rgba(249, 228, 182, 0.553);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 100px;
+
+}
+
+.h4-piu-span {
+    padding-bottom: 80px;
+    margin-right: 0;
+
+}
+
+.prezzo {
+    padding-bottom: 60px;
+    padding-left: 100px;
+}
+
+h4 {
+    font-size: 14pt;
+    color: rgb(106, 28, 28);
+    margin-bottom: 0;
+}
+
+.h4-piu-span span {
+    font-size: 12pt;
+    color: rgb(106, 28, 28);
+}
+
+.product-card__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 40px;
+}
+
+.product-card__price {
+    color: rgb(106, 28, 28);
+    font-size: 14pt;
+}
+
+.product-card__button {
+    margin-top: 80px;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: rgb(248, 208, 33);
+    color: rgb(106, 28, 28);
+    font-size: 12pt;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    width: 180px;
+}
+
+.product-card__button:hover{
+    transition: 1s;
+    font-size: 13pt;
+}
+
+.NavBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 50%;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgba(249, 228, 182, 0.553);
+}
+
+.NavBar button {
+    font-size: 9pt;
+    width: 100px;
+    border-radius: 30px;
+    height: 40px;
+    background-color: rgb(248, 208, 33);
+    border: none;
+    color: rgb(106, 28, 28);
+}
+
+.NavBar :nth-child(3){
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.NavBar button div {
+    width: 28%;
+    height: 60%;
+    
+}
+
+.NavBar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.NavBar :nth-child(3):hover{
+    transition: 1s;
+    font-size: 11pt;
+    width: 120px;
+    border-radius: 30px;
+    height: 60px;
+    background-color: rgb(248, 208, 33);
+    border: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover{
+    text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="product-card">
+        <img src="W1-P2-Esercizi-Flex-Assets/honey.jpg" class="product-card__image" alt="Prodotto" />
+        <div class="product-card__info">
+            <div class="product-card__text">
+                <div class="h4-piu-span">
+                    <h4>100% Bio Honey</h4>
+                    <span>Italian, not treated</span>
+                </div>
+                <div class="prezzo">
+                    <span class="product-card__price">7$/kg</span>
+                </div>
+            </div>
+            <button class="product-card__button">Add to cart</button>
+        </div>
+    </div>
+
+    <div class="NavBar">
+            <button>Our Honey</button>
+            <button>Trace Honey</button>
+            <button><div><img src="W1-P2-Esercizi-Flex-Assets/logo.png" alt="Logo"></div>SHOP</button>
+            <button>Facilities</button>
+            <button>Contacts</button>
+    </div>
+</div>
+</body>
+
+</html>
