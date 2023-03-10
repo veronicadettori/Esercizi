@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <script src="https://kit.fontawesome.com/2e1f58da57.js" crossorigin="anonymous"></script>
+    <title>Album example · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/grid/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .list-group-item{
+        background-color: rgb(252, 208, 255);
+      }
+
+      .text-white{
+        color: whitesmoke;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 228px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        }
+
+        .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        } 
+        .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+        }
+
+        /* Position the front and back side */
+        .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        }
+
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+        background-color: #bbb;
+        color: black;
+        }
+
+        /* Style the back side */
+        .flip-card-back {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-family:'Courier New', Courier, monospace;
+        transform: rotateY(180deg);
+        }
+
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+  <div class="collapse bg-danger" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <ul class="text-white">
+            <li><a href="#Preferiti" class="text-white">Preferiti</a></li>
+            <li><a href="#Consigliati" class="text-white">Consigliati</a></li>
+            <li><a href="#HALL" class="text-white">HALL OF SHAME</a></li>
+            <li><a href="#Copertine" class="text-white">Copertine</a></li>
+            <li><a href="#Sconsigliati" class="text-white">Sconsigliati</a></li>
+            <li><a href="#Commenti" class="text-white">Commenti</a></li>
+          </ul>
+          </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-danger shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-end-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z"/>
+        </svg> 
+        <strong>Veronica Dettori's Album</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="bg-danger">
+
+  <section class="py-5 text-center container ">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto text-light">
+        <h1 class="fw-light" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">THE WORLD AROUND YOUR MUSIC</h1>
+        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Check out everything we announced for artists and their teams at Stream On. Explore all the ways you can build the world around your music — now on the world’s most popular music streaming service.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h2>I miei preferiti in assoluto: <a name="Preferiti"></a></h2>
+      <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="lanauno.jpeg"/>
+            <div class="card-body">
+              <ul>
+                <li>LANA DEL REY</li>
+                <li>Album: BORN TO DIE</li>
+                <li>Genere: Indie</li>
+                <li>2012</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="mela.jpeg"/>
+            <div class="card-body">
+              <ul>
+                <li>MELANIE MARTINEZ</li>
+                <li>Album: K-12</li>
+                <li>Genere: Indie</li>
+                <li>2019</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="aaa.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>ATTACK ON TITAN</li>
+                <li>Album: Ost</li>
+                <li>Genere: -</li>
+                <li>2021</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="gaga.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>LADY GAGA</li>
+                <li>Album: THE FAME MONSTERS</li>
+                <li>Genere: ROCK</li>
+                <li>2009</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="lazza.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>LAZZA</li>
+                <li>Album: SIRIO</li>
+                <li>Genere: RAP</li>
+                <li>2022</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="billie.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>BILLIE EILISH</li>
+                <li>Album: Guitar Songs</li>
+                <li>Genere: Indie</li>
+                <li>2022</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="cold.jpeg"/>
+            <div class="card-body">
+              <ul>
+                <li>COLDPLAY</li>
+                <li>Album: PARACHUTES</li>
+                <li>Genere: POP</li>
+                <li>2000</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="tay.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>TAYLOR SWIFT</li>
+                <li>Album: 1989</li>
+                <li>Genere: Pop</li>
+                <li>2014</li>
+              </ul><div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h2>Ecco cosa ho apprezzato: <a name="Consigliati"></a></h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="lanauno.jpeg"/>
+            <div class="card-body">
+              <ul>
+                <li>LANA DEL REY</li>
+                <li>Album: BORN TO DIE</li>
+                <li>Genere: Indie</li>
+                <li>2012</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="mela.jpeg"/>
+            <div class="card-body">
+              <ul>
+                <li>MELANIE MARTINEZ</li>
+                <li>Album: K-12</li>
+                <li>Genere: Indie</li>
+                <li>2019</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="aaa.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>ATTACK ON TITAN</li>
+                <li>Album: Ost</li>
+                <li>Genere: -</li>
+                <li>2021</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        
+        
+      </div>
+    </div>
+  </div>
+
+ <div class="album py-5 bg-light">
+    <div class="container">
+      <h2>HALL OF SHAME <a name="HALL"></a></h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="caramello.jpeg" class="bd-placeholder-img card-img-top" width="100%" height="325" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>CARAMELLO</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+              <ul>
+                <li>Elettra Lamborghini</li>
+                <li>Genere: Pop</li>
+                <li>2022</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="malibu.jpg" class="bd-placeholder-img card-img-top" width="100%" height="325" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                    <h2>MALIBU'</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+              <ul>
+              <li>San Giovanni</li>
+              <li>Genere: Pop</li>
+              <li>2021</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="elettra.jpg" class="bd-placeholder-img card-img-top" width="100%" height="325" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>PISTOLERO</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+              <ul>
+                <li>Elettra Lamborghini</li>
+                <li>Genere: Pop</li>
+                <li>2021</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h2>TUTTE COPERTINE! <a name="Copertine"></a></h2>
+      <div class="row row-col-sm-6 row-col-md-4 row-col-xl-2 g-1">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="lanauno.jpeg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="mela.jpeg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="tay.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="billie.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="lazza.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+
+      <div class="row row-col-sm-6 row-col-md-4 row-col-xl-2 g-1">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="mad.jpg"/>
+            <div class="card-body">
+             
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="nir.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="mig.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="gree.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="gaga.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        
+      </div>
+
+      <div class="row row-col-sm-6 row-col-md-4 row-col-xl-2 g-1">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="cold.jpeg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="arc.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="ade.jpeg"/>
+            <div class="card-body">
+          
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="artic.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="bl.jpg"/>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="row row-col-sm-6 row-col-md-4 row-col-xl-2 g-1">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="bl2.jpg"/>
+              <div class="card-body">
+                
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="bl3.jpg"/>
+              <div class="card-body">
+                
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="aria.jpeg"/>
+              <div class="card-body">
+            
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="cry.png"/>
+              <div class="card-body">
+                
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="after.jpg"/>
+              <div class="card-body">
+                
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div> 
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h2>Ecco cosa non ho apprezzato granchè: <a name="Sconsigliati"></a></h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="siga.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>Mark Dekoda</li>
+                <li>Album: -</li>
+                <li>Genere: Techno</li>
+                <li>-</li>
+              </ul><div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="cose.jpg"/>
+            <div class="card-body">
+              <ul>
+                <li>Basstrologe</li>
+                <li>Album: Somebody to love</li>
+                <li>Genere: -</li>
+                <li>-</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="coso.jpeg"/>
+            <div class="card-body">
+              <ul>
+                <li>Maddix</li>
+                <li>Album: Heute Nacht</li>
+                <li>Genere: Techno</li>
+                <li>-</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bell"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-heart-crack"></i></button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+
+
+        <h3>Cosa dicono gli altri utenti? Leggilo in tempo reale! <a name="Commenti"></a></h3>
+        <div class="list-group w-auto">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="proc.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Andrea Messana:</h6>
+                <p class="mb-0 opacity-75">Ma che gusti hai... vada via ai ciapa! </p>
+              </div>
+              <small class="opacity-50 text-nowrap">now</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="ser.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Ilde Stramandinoli:</h6>
+                <p class="mb-0 opacity-75">Ora capisco perchè ci sono pochi programmatori...</p>
+              </div>
+              <small class="opacity-50 text-nowrap">3d</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="sca.jpeg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Gianluca Cobucci:</h6>
+                <p class="mb-0 opacity-75">Mi vengono in mente le parole del mio artista preferito: quando hanno distruibuito l'altezza, lui era in fila per la carbonara...</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="tuc.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Samuele Pieretto:</h6>
+                <p class="mb-0 opacity-75">Senti la mia playlist: pensavo che se avessi tessuto una tela bellissima, avrei pescato solo pesci bellissimi.</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="io.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Veronica Dettori (proprietario):</h6>
+                <p class="mb-0 opacity-75">Grazie per i vostri feedback.</p>
+              </div>
+              <small class="opacity-50 text-nowrap">10s</small>
+            </div>
+          </a>
+        </div>
+
+</main>
+
+<footer class="text-muted py-5 bg-danger">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#" style="color:black">Back to top</a>
+    </p>
+    <p class="mb-1">Questo è il mio lavoro, dimmi che ne pensi! :) </p>
+    <p class="mb-0">Ho usato bootstrap vs5.0</p>
+  </div>
+</footer>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
