@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Beautiful Bootstrap Navbar with Menu Icons</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/jumbotron/">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<style>
+body {
+	background: #eeeeee;
+	font-family: 'Varela Round', sans-serif;
+}
+.navbar {
+	color: #fff;
+	background: #926dde !important;
+	padding: 5px 16px;
+	border-radius: 0;
+	border: none;
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+.navbar img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	color: #efe5ff;
+	padding-left: 0;
+	padding-right: 50px;
+	font-size: 24px;		
+}
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+	color: #fff;
+}
+.navbar .navbar-brand i {
+	font-size: 25px;
+	margin-right: 5px;
+}
+.search-box {
+	position: relative;
+}	
+.search-box input {
+	padding-right: 35px;
+	min-height: 38px;
+	border: none;
+	background: #faf7fd;
+	border-radius: 3px !important;
+}
+.search-box input:focus {		
+	background: #fff;
+	box-shadow: none;
+}
+.search-box .input-group-addon {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 10px 7px;
+	height: 100%;
+}
+.search-box i {
+	color: #a0a5b1;
+	font-size: 19px;
+}
+.navbar .nav-item i {
+	font-size: 18px;
+}
+.navbar .nav-item span {
+	position: relative;
+	top: 3px;
+}
+.navbar .navbar-nav > a {
+	color: #efe5ff;
+	padding: 8px 15px;
+	font-size: 14px;		
+}
+.navbar .navbar-nav > a:hover, .navbar .navbar-nav > a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+.navbar .navbar-nav > a > i {
+	display: block;
+	text-align: center;
+}
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+.navbar .dropdown-item .material-icons {
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+.navbar .nav-item.open > a, .navbar .nav-item.open > a:hover, .navbar .nav-item.open > a:focus {
+	color: #fff;
+	background: none !important;
+}
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .dropdown-menu a {
+	color: #777 !important;
+	padding: 8px 20px;
+	line-height: normal;
+	font-size: 15px;
+}
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:focus {
+	color: #333 !important;
+	background: transparent !important;
+}
+.navbar .navbar-nav .active a, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav .active a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.2);
+	background: transparent !important;
+}
+.navbar .navbar-nav .user-action {
+	padding: 9px 15px;
+	font-size: 15px;
+}
+.navbar .navbar-toggle {
+	border-color: #fff;
+}
+.navbar .navbar-toggle .icon-bar {
+	background: #fff;
+}
+.navbar .navbar-toggle:focus, .navbar .navbar-toggle:hover {
+	background: transparent;
+}
+.navbar .navbar-nav .open .dropdown-menu {
+	background: #faf7fd;
+	border-radius: 1px;
+	border-color: #faf7fd;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .divider {
+	background-color: #e9ecef !important;
+}
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 350px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 1199px){
+	.navbar .navbar-nav > a > i {
+		display: inline-block;			
+		text-align: left;
+		min-width: 30px;
+		position: relative;
+		top: 4px;
+	}
+	.navbar .navbar-collapse {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+	}
+	.navbar .navbar-form {
+		border: none;			
+		display: block;
+		margin: 10px 0;
+		padding: 0;
+	}
+	.navbar .navbar-nav {
+		margin: 8px 0;
+	}
+	.navbar .navbar-toggle {
+		margin-right: 0;
+	}
+	.input-group {
+		width: 100%;
+	}
+
+    
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+}
+
+      .descrizioneimmagine{
+        align-items: center;
+        display: flex;
+      }
+
+      .descrizioneimmagine h2{
+        margin-right: 30px;
+      }
+      
+      .card{
+        box-shadow: 10px 10px 50px rgb(193, 213, 247);
+        background-color: #dbcdf7;
+      }
+
+
+.carousel {
+	margin: 50px auto;
+}
+.carousel .carousel-item {
+	color: #999;
+	overflow: hidden;
+    min-height: 120px;
+	font-size: 13px;
+}
+.carousel .media {
+	position: relative;
+	padding: 0 0 0 20px;
+	margin-left: 20px;
+}
+.carousel .media img {
+	width: 75px;
+	height: 75px;
+	display: block;
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border: 2px solid #fff;
+}
+.carousel .testimonial {
+    color: #fff;
+    position: relative;    
+    background: #9b9b9b;
+	padding: 15px;
+	margin: 0 0 20px 20px;
+}
+.carousel .testimonial::before, .carousel .testimonial::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+}
+.carousel .testimonial::before {
+    width: 20px;
+    height: 20px;
+	background: #9b9b9b;
+	box-shadow: inset 12px 0 13px rgba(0,0,0,0.5);
+}
+.carousel .testimonial::after {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+}
+.carousel .carousel-item .row > div:first-child .testimonial {
+	margin: 0 20px 20px 0;
+}
+.carousel .carousel-item .row > div:first-child .media {
+	margin-left: 0;
+}
+.carousel .testimonial p {
+	text-indent: 40px;
+    line-height: 21px;
+	margin: 0;
+}
+.carousel .testimonial p::before {
+	content: "\201D";
+  	font-family: Arial,sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 68px;
+    line-height: 70px;
+    position: absolute;
+    left: -25px;
+    top: 0;
+}
+.carousel .overview {
+	padding: 3px 0 0 15px;
+}
+.carousel .overview .details {
+	padding: 5px 0 8px;
+}
+.carousel .overview b {
+	text-transform: uppercase;
+	color: #ff5555;
+}
+.carousel-control-prev, .carousel-control-next {
+	width: 30px;
+	height: 30px;
+    background: #666;
+    text-shadow: none;
+	top: 4px;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 16px;
+}
+.carousel-control-prev {
+	left: auto;
+	right: 40px;
+}
+.carousel-control-next {
+	left: auto;
+}
+.carousel-indicators {
+	bottom: -80px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 17px;
+    height: 17px;
+	border-radius: 0;
+	margin: 1px 5px;
+  	box-sizing: border-box;
+}
+.carousel-indicators li {	
+    background: #e2e2e2;
+    border: 4px solid #fff;
+}
+.carousel-indicators li.active {
+	color: #fff;
+    background: #ff5555;
+    border: 5px double;    
+}
+.star-rating li {
+	padding: 0 2px;
+}
+.star-rating i {
+	font-size: 14px;
+	color: #ffdc12;
+}
+</style>
+</head> 
+<body>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+	<a href="#" class="navbar-brand"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-heart-fill" viewBox="0 0 16 16">
+        <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+      </svg>
+      Lilac<b>Flower</b></a>  		
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+		<form class="navbar-form form-inline">
+			<div class="input-group search-box">								
+				<input type="text" id="search" class="form-control" placeholder="Search here...">
+				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+			</div>
+		</form>
+		<div class="navbar-nav ml-auto">
+			<a href="#" class="nav-item nav-link active"><i class="fa fa-home mr-5"></i><span class="mr-5">Home</span></a>
+			<a href="#offerte" class="nav-item nav-link"><span>Offerte del giorno</span></a>
+			<a href="#welcome" class="nav-item nav-link"><span>Welcome Summer!</span></a>
+			<a href="#star" class="nav-item nav-link"><span>STAR</span></a>
+			<a href="#last" class="nav-item nav-link"><span>Last Minute</span></a>		
+			<a href="#test" class="nav-item nav-link"><span>Testimonials</span></a>
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="/M3/M3-D4/assets/io.jpg" class="avatar" alt="Avatar"> <b class="caret"></b></a>
+				<div class="dropdown-menu">
+					<a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+					<div class="divider dropdown-divider"></div>
+					<a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+<main>
+    <div class="container py-4">
+      <header class="pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-4">Ciao! Cosa stai cercando oggi?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-wink" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm1.757-.437a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z"/>
+            </svg>
+        </a>
+      </header>
+  
+      <div class="p-5 mb-4 rounded-3">
+        <div class="container-fluid py-5 rounded-5" style="background-color: #d3c1f7;">
+          <h1 class="display-5 fw-bold text-center mr-5 pr-5">Lilac Flower</h1>
+          <p class="col-md-8 fs-4 text-center ml-5 pl-5">Un viaggio unico e più responsabile organizzato in collaborazione con le migliori agenzie locali. 
+            Prenota in tutta tranquillità e con la massima flessibilità con noi!
+          </p>
+          <button class="btn btn-primary btn-lg text-center ml-5" type="button">Contattaci subito!</button>
+        </div>
+      </div>
+  
+      <div class="row align-items-md-stretch ">
+        <div class="col-md-12">
+          <div class="h-100 p-5 rounded-3" style="background-color:#e0d3f8;">
+            <h2>Scopri un altro modo di viaggiare, progettando il tuo itinerario con le migliori agenzie locali in Europa e nel mondo</h2>
+            <p>Stai cercando un viaggio più autentico e responsabile? Scopri le esperienze uniche proposte dai nostri esperti locali, i nostri consigli e le migliori pratiche per viaggiare in armonia con le culture locali e gli ambienti naturali.</p>
+            <button class="btn btn-outline-dark" type="button" style="color: #5b1dd6;">Clicca qui!</button>
+          </div>
+        </div>
+        
+    
+      </div>
+  
+      <hr class="featurette-divider">
+      <h1>Offerte del giorno: <a name="offerte"></a></h1>
+      <div class="row ">
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+
+          <img class="bd-placeholder-img rounded-circle" width="160" height="150" src="/M3/M3-D4/assets/mil.jpg"/>
+          <h2 class="fw-normal mt-3">MILANO</h2>
+          
+          <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+
+          <img class="bd-placeholder-img rounded-circle" width="160" height="150" src="/M3/M3-D4/assets/verona.jpg"/>
+          <h2 class="fw-normal mt-3">VERONA</h2>
+          
+          <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+
+          <img class="bd-placeholder-img rounded-circle" width="160" height="150" src="/M3/M3-D4/assets/venezia.jpg"/>
+          <h2 class="fw-normal mt-3">VENEZIA</h2>
+          
+          <p>And lastly this, the third column of representative placeholder content.</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+
+            <img class="bd-placeholder-img rounded-circle" width="160" height="150" src="/M3/M3-D4/assets/padova.jpg"/>
+            <h2 class="fw-normal mt-3">PADOVA</h2>
+            
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+    </div><!-- /.row -->
+
+
+    <hr class="featurette-divider">
+    <h1>Welcome Summer! <a name="welcome"></a></h1>
+      <div class="row ">
+
+        <div class="col-lg-2 col-md-4 col-sm-6 card">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/sardegna.jpeg"/>
+          <h2 class="fw-normal mt-3">SARDEGNA</h2>
+          
+          <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2 col-md-4 col-sm-6 card">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/sicilia.jpg"/>
+          <h2 class="fw-normal mt-3">SICILIA</h2>
+          
+          <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2 col-md-4 col-sm-6 card">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/calabria.jpeg"/>
+          <h2 class="fw-normal mt-3">CALABRIA</h2>
+          
+          <p>And lastly this, the third column of representative placeholder content.</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2 col-md-4 col-sm-6 card">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/umbria.jpg"/>
+          <h2 class="fw-normal mt-3">UMBRIA</h2>
+            
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6 card">
+
+            <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/amalfu.jpg"/>
+            <h2 class="fw-normal mt-3">AMALFI</h2>
+            
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6 card">
+
+            <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/ROMA.jpeg"/>
+            <h2 class="fw-normal mt-3">ROMA</h2>
+            
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+    </div><!-- /.row -->
+
+    <div class="d-none d-sm-block d-sm-none d-md-block">
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-8 immaginegigante">
+            <img src="/M3/M3-D4/assets/giapponemeglio.jpg" alt="GIAPPONE" style="width: 700px; height: 500px;">
+            </div>
+            <div class="col-md-4 descrizioneimmagine">
+            <h2 class="featurette-heading fw-normal lh-1"><a name="star"></a>
+                <span>Al modico prezzo di: 1000 euro, una settimana, tutto compreso!</span>
+                <hr>
+                <span>Da giugno! Una settimana di puro relax, nel cuore del Giappone, tutto da scoprire!</span>
+            </h2>
+            <p class="lead"> Il paradiso che hai sempre sognato! Scade a settembre 2023!</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <h1>Last minute!<a name="last"></a></h1>
+      <div class="row ">
+
+        <div class="col-lg-2 col-md-4 col-sm-6 ">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/bali.jpg"/>
+            <h2 class="fw-normal mt-3">BALI</h2>
+          
+            <p>Scade a MEZZANOTTE! NON PERDERLO!</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2 col-md-4 col-sm-6 ">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/buda.jpg"/>
+            <h2 class="fw-normal mt-3">BUDAPEST</h2>
+          
+            <p>Scade a MEZZANOTTE! NON PERDERLO!</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2 col-md-4 col-sm-6 ">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/riga.jpeg"/>
+          <h2 class="fw-normal mt-3">RIGA</h2>
+          
+          <p>Scade a MEZZANOTTE! NON PERDERLO!</p>
+          
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2 col-md-4 col-sm-6 ">
+
+          <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/praga.jpg"/>
+          <h2 class="fw-normal mt-3">PRAGA</h2>
+            
+          <p>Scade a MEZZANOTTE! NON PERDERLO!</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6 ">
+
+            <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/LUXOR.jpg"/>
+            <h2 class="fw-normal mt-3">LUXOR</h2>
+            
+            <p>Scade a MEZZANOTTE! NON PERDERLO!</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6 ">
+
+            <img class="bd-placeholder-img rounded-circle mt-3" width="160" height="150" src="/M3/M3-D4/assets/ISTA.jpg"/>
+            <h2 class="fw-normal mt-3">INSTAMBUL</h2>
+            
+            <p>Scade a MEZZANOTTE! NON PERDERLO!</p>
+            
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+          </div><!-- /.col-lg-4 -->
+
+    </div><!-- /.row -->
+
+
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-sm-12">			
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <h2>Testimonials<a name="test"></a></h2>
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>   
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="testimonial">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+                    </div>
+                    <div class="media">
+                      <img src="/M3/M3-D4/assets/avatar1.png" class="mr-3" alt="">
+                      <div class="media-body">
+                        <div class="overview">
+                          <div class="name"><b>Paula Wilson</b></div>
+                          <div class="details">Media Analyst / SkyNet</div>
+                          <div class="star-rating">
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                          </div>
+                        </div>										
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="testimonial">
+                      <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus quam.</p>
+                    </div>
+                    <div class="media">
+                      <img src="/M3/M3-D4/assets/Avatar6.png" class="mr-3" alt="">
+                      <div class="media-body">
+                        <div class="overview">
+                          <div class="name"><b>Antonio Moreno</b></div>
+                          <div class="details">Web Developer / SoftBee</div>
+                          <div class="star-rating">
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                          </div>
+                        </div>										
+                      </div>
+                    </div>
+                  </div>
+                </div>			
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="testimonial">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+                    </div>
+                    <div class="media">
+                      <img src="/M3/M3-D4/assets/avatar2.png" class="mr-3" alt="">
+                      <div class="media-body">
+                        <div class="overview">
+                          <div class="name"><b>Michael Holz</b></div>
+                          <div class="details">Web Developer / DevCorp</div>											
+                          <div class="star-rating">
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                          </div>
+                        </div>										
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="testimonial">
+                      <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus quam.</p>
+                    </div>
+                    <div class="media">
+                      <img src="/M3/M3-D4/assets/avatar3.jpg" class="mr-3" alt="">
+                      <div class="media-body">
+                        <div class="overview">
+                          <div class="name"><b>Mary Saveley</b></div>
+                          <div class="details">Graphic Designer / MarsMedia</div>
+                          <div class="star-rating">
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                          </div>
+                        </div>										
+                      </div>
+                    </div>
+                  </div>
+                </div>			
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="testimonial">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+                    </div>
+                    <div class="media">
+                      <img src="/M3/M3-D4/assets/avatar4.jpg" class="mr-3" alt="">
+                      <div class="media-body">
+                        <div class="overview">
+                          <div class="name"><b>Martin Sommer</b></div>
+                          <div class="details">SEO Analyst / RealSearch</div>
+                          <div class="star-rating">
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                          </div>
+                        </div>										
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="testimonial">
+                      <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus quam.</p>
+                    </div>
+                    <div class="media">
+                      <div class="media-left d-flex mr-3">
+                        <img src="/M3/M3-D4/assets/avatar5.jpg" alt="">										
+                      </div>
+                      <div class="media-body">
+                        <div class="overview">
+                          <div class="name"><b>John Williams</b></div>
+                          <div class="details">Web Designer / UniqueDesign</div>
+                          <div class="star-rating">
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                          </div>
+                        </div>										
+                      </div>
+                    </div>
+                  </div>
+                </div>			
+              </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+              <i class="fa fa-chevron-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <hr class="featurette-divider mt-5 pt-3">
+    <h3>Cosa dicono gli altri utenti? Leggilo in tempo reale!</h3>
+        <div class="list-group w-auto mt-4">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="/M3/M3-D4/assets/proc.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Andrea Messana:</h6>
+                <p class="mb-0 opacity-75">Veramente uno schifo... recensione negativa! </p>
+              </div>
+              <small class="opacity-50 text-nowrap">now</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="/M3/M3-D4/assets/ser.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Ilde Stramandinoli:</h6>
+                <p class="mb-0 opacity-75">Grazie alla prossima!</p>
+              </div>
+              <small class="opacity-50 text-nowrap">3d</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="/M3/M3-D4/assets/sca.jpeg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Gianluca Cobucci:</h6>
+                <p class="mb-0 opacity-75">Ho trovato una scalopendra nella mia stanza... 3/5</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="/M3/M3-D4/assets/tuc.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Samuele Pieretto:</h6>
+                <p class="mb-0 opacity-75">Ok.</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="/M3/M3-D4/assets/io.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Veronica Dettori (proprietario):</h6>
+                <p class="mb-0 opacity-75">Grazie per i vostri feedback.</p>
+              </div>
+              <small class="opacity-50 text-nowrap">10s</small>
+            </div>
+          </a>
+        </div>
+
+    </div>
+
+
+  </main>
+  <div class="container">
+    <footer class="py-5">
+        
+       <div class="row-col-md-6 mb-4 ml-5">
+        <a class="pr-3" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="grey" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg></a>
+          <a class="pr-3" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="grey" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg></a>
+          <a class="pr-3" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="grey" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+          </svg></a>
+          <a class="pr-3" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="grey" class="bi bi-youtube" viewBox="0 0 16 16">
+            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+          </svg></a>
+       </div> 
+
+      <div class="row ml-4">
+        <div class="col-6 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Audio and Subtitles</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Media Center</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+            <li class="nav-item mb-2 mt-5 "><a href="#" class="nav-link p-0 text-muted ">Service Code</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Audio Description</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Investor Relations</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Legal Notices</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Help Center</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Jobs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Preferences</a></li>
+          </ul>
+        </div>
+  
+        <div class="text-center p-4 rounded-5" style="background-color:#b99bf5;">
+          © 2023 Copyright:
+          <a class="text-reset fw-bold" href="#">Lilac Flower</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+
+</body>
+</html>
